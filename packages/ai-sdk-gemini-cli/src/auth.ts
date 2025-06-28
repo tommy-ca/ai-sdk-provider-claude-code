@@ -4,7 +4,7 @@ import { OAuth2Client } from 'google-auth-library';
 
 const DEFAULT_PATH =
   process.env.GEMINI_OAUTH_PATH ??
-  path.join(process.env.HOME || '~', '.gemini', 'oauth_creds.json');
+  path.join(process.env.HOME || process.env.USERPROFILE || '', '.gemini', 'oauth_creds.json');
 
 /**
  * Load access token from Gemini CLI credentials and refresh if expired.
